@@ -1,1 +1,3 @@
-export const Greeter = (name: string) => `Hello ${name}`;
+const portess = require('./portess');
+portess.Process = require('./process');
+module.exports = portess;
