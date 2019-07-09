@@ -1,4 +1,4 @@
-const Server = require('../utils/server');
+const Server = require('./utils/server');
 /**
  * - isOpen
  * - get(port[,range])

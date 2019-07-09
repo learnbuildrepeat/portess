@@ -16,7 +16,7 @@ commander
 
 commander
     .command('get')
-    .alias('f')
+    .alias('g')
     .description('Get an available port')
     .action(async () => {
         let port = await portess.Port.get();

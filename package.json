@@ -1,5 +1,5 @@
 {
-  "name": "tunnel-port",
+  "name": "portess",
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
@@ -17,15 +17,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/valishah/tunnel-port.git"
+    "url": "git+https://github.com/valishah/portess.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/valishah/tunnel-port/issues"
+    "url": "https://github.com/valishah/portess/issues"
   },
-  "homepage": "https://github.com/valishah/tunnel-port#readme",
+  "homepage": "https://github.com/valishah/portess#readme",
   "devDependencies": {
     "@types/jest": "^24.0.15",
     "@types/node": "^12.0.10",

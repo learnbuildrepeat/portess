@@ -1,4 +1,4 @@
-const Port = require('../lib/port');
+const Port = require('../port');
 
 describe('Port',() => {
     test('should find if a port is available', async () => {

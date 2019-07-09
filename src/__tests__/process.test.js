@@ -1,4 +1,4 @@
-const prcs = require('../lib/process');
+const prcs = require('../process');
 
 describe('Process',() => {
     test('should find if a process is running', async () => {
