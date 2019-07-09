@@ -10,8 +10,17 @@ commander
     .alias('o')
     .description('Find if a port is open or closed')
     .action(async (port)=>{
-        let isPortOpen = await portess.isOpen(port);
+        let isPortOpen = await portess.Port.isOpen(port);
         console.log('Port %s is %s', port, isPortOpen ? 'open' : 'closed');
+    });
+
+commander
+    .command('get')
+    .alias('f')
+    .description('Get an available port')
+    .action(async () => {
+        let port = await portess.Port.get();
+        console.log('Available port %s is %s', port);
     });
 
 commander

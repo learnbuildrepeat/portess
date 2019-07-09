@@ -45,6 +45,6 @@
     "debug": "^4.1.1"
   },
   "bin": {
-    "portess": "./bin/portess"
+    "portess": "./bin/cli.js"
   }
 }
