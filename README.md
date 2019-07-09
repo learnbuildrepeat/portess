@@ -1,4 +1,4 @@
-Port and Process management. Find open ports, monitor ports, find process state etc.
+Port and process management. Find open ports, monitor ports, find and manage process states.
 
 ### API
 
