@@ -13,7 +13,7 @@ const create = (port) => {
     const server = net.createServer();
     server.unref();
 
-    server.on('error', function(err) {
+    server.on('error', function (err) {
       if (err.code === 'EADDRINUSE') {
         log('Port %s was in use', port);
         return resolve(false);
@@ -21,13 +21,13 @@ const create = (port) => {
       return reject(err);
     });
 
-    server.on('close', function() {
+    server.on('close', function () {
       log('TCP server on port %s closed', port);
-      resolve(isCheckOperation?true:port);
+      resolve(isCheckOperation ? true : port);
     });
-    
+
     log('Trying to test port %s', port);
-    server.listen({port}, function(err) {
+    server.listen({ port }, function (err) {
       port = server.address().port;
       if (err && err.code === 'EADDRINUSE') {
         log('Port %s was in use', port);
@@ -36,7 +36,7 @@ const create = (port) => {
       if (err)
         return reject(err);
 
-      server.close(function(err) {
+      server.close(function (err) {
         if (err)
           return reject(err);
         log('Port %s was free', port);

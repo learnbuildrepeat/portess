@@ -5,10 +5,10 @@
  * by(<type>) - type: name/port
  */
 class Process {
-   /**
-    * Know if a process is running
-    * @param pid 
-    */
+	/**
+	 * Know if a process is running
+	 * @param pid 
+	 */
 	static isRunning(pid) {
 		if (!pid) throw new Error('Provide a pid');
 		try {
