@@ -1,6 +1,5 @@
 const Server = require('../utils/server');
 /**
- * Reference: https://github.com/alanhoff/node-portastic#readme
  * - isOpen
  * - get(port[,range])
  */

@@ -1,5 +1,4 @@
 /**
- * Reference : https://github.com/yibn2008/find-process
  * isRunning - To Find a pid is active
  * kill - To kill a process by pid
  * by(<type>) - type: name/port
