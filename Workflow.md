@@ -22,4 +22,4 @@ Enable CLI:
 - Node : [package commander](https://www.npmjs.com/package/commander)
 - [Create and publish NPM package with Typescript](https://codeburst.io/https-chidume-nnamdi-com-npm-module-in-typescript-12b3b22f0724)
 https://itnext.io/step-by-step-building-and-publishing-an-npm-typescript-package-44fe7164964c
-- 
+- Enable tslint & prettier : https://medium.com/@cosmvs/set-up-tslint-and-prettier-in-vs-code-for-react-app-with-typescript-5b7f5895ce37
