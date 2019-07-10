@@ -1,6 +1,6 @@
 const portess = {
-    Port : require('./port'),
-    Process : require('./process'),
+    Port : require('./lib/port'),
+    Process : require('./lib/process'),
 };
 
 module.exports = portess;

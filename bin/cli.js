@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const portess = require('../lib');
+const portess = require('../dist');
 const commander = require('commander');
 const package = require('../package.json');
 commander.version(package.version);

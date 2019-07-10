@@ -1,5 +1,8 @@
 Port and process management. Find open ports, monitor ports, find and manage process states.
 
+### Installation
+`npm install --save portess`
+
 ### API
 
 `portess.Port.isOpen(port)`

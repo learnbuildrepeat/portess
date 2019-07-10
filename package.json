@@ -2,8 +2,8 @@
   "name": "portess",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
@@ -38,7 +38,7 @@
     "typescript": "^3.5.2"
   },
   "files": [
-    "lib/**/*"
+    "dist/**/*"
   ],
   "dependencies": {
     "bluebird": "^3.5.5",
