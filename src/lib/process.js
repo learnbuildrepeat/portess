@@ -18,6 +18,25 @@ class Process {
 			return error.code === 'EPERM';
 		}
 	}
+
+	static kill(pid) {
+		if (!pid) {
+			throw new Error('Provide a pid');
+		}
+		return new Promise((resolve,reject) => {
+			process.on('SIGHUP', () => {
+				console.log('Got SIGHUP signal.');
+				return resolve(true);
+			});
+			try {
+				process.kill(pid, 'SIGHUP');
+			} catch (error) {
+				if(error.code === 'ESRCH'){
+					return resolve(false);
+				}
+			}
+		});
+	}
 }
 
 module.exports = Process;
