@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/learnbuildrepeat/portess.svg?branch=master)](https://travis-ci.org/learnbuildrepeat/portess)
+
 Port and process management. Find open ports, monitor ports, find and manage process states.
 
 ### Installation
@@ -5,7 +7,7 @@ Port and process management. Find open ports, monitor ports, find and manage pro
 
 ### API
 
-`portess.Port.isOpen(port)`
+`portess.port.isOpen(port)`
 
 Finds if the port is open. Return value will be a promise that will be yielded with a boolean result.
 
@@ -16,7 +18,7 @@ await portess.Port.isOpen(3000); // true/false
 
 /***************(or)**************/
 
-portess.Port.isOpen(3000)
+portess.port.isOpen(3000)
     .then( isOpen => {
         console.log(`Port 3000 is %s`, isOpen?'open':'in use');
     });
@@ -30,7 +32,7 @@ Get a random open port. Retuns a promise that will be yielded with a port number
 ```js
 const portess = require('portess');
 
-await portess.Port.get(); // Random port number - ex: 44450
+await portess.port.get(); // Random port number - ex: 44450
 
 /***************(or)**************/
 
@@ -47,7 +49,7 @@ Identifies if a process state is active. Returns `boolean`
 ```js
 const portess = require('portess');
 
-portess.Process.isRunning(55432); // true if the process is running
+portess.process.isRunning(55432); // true if the process is running
 ```
 
 ### CLI
