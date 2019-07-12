@@ -9,7 +9,9 @@ class Process {
 	 * @param pid 
 	 */
 	static isRunning(pid) {
-		if (!pid) throw new Error('Provide a pid');
+		if (!pid) {
+			throw new Error('Provide a pid');
+		}	
 		try {
 			return process.kill(pid, 0);
 		} catch (error) {

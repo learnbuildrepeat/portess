@@ -33,12 +33,14 @@ const create = (port) => {
         log('Port %s was in use', port);
         return resolve(false);
       }
-      if (err)
+      if (err) {
         return reject(err);
+      }
 
-      server.close(function (err) {
-        if (err)
-          return reject(err);
+      server.close(function (error) {
+        if (error){
+          return reject(error);
+        }
         log('Port %s was free', port);
       });
     });
