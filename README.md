@@ -14,7 +14,7 @@ Finds if the port is open. Return value will be a promise that will be yielded w
 ```js
 const portess = require('portess');
 
-await portess.Port.isOpen(3000); // true/false
+await portess.port.isOpen(3000); // true/false
 
 /***************(or)**************/
 
@@ -24,8 +24,9 @@ portess.port.isOpen(3000)
     });
 
 ```
+<br/>
 
-`portess.Port.get()`
+`portess.port.get()`
 
 Get a random open port. Retuns a promise that will be yielded with a port number.
 
@@ -36,13 +37,14 @@ await portess.port.get(); // Random port number - ex: 44450
 
 /***************(or)**************/
 
-portess.Port.get()
+portess.port.get()
     .then( port => {
         console.log(`Port %s is open`, port);
     });
 ```
+<br/>
 
-`portess.Process.isRunning(pid)`
+`portess.process.isRunning(pid)`
 
 Identifies if a process state is active. Returns `boolean`
 
@@ -51,6 +53,18 @@ const portess = require('portess');
 
 portess.process.isRunning(55432); // true if the process is running
 ```
+<br/>
+
+`portess.process.kill(pid)`
+
+Kill a process by `pid`
+
+```js
+const portess = require('portess');
+
+portess.process.kill(55432); // false : If the process is not found
+```
+<br/>
 
 ### CLI
 You can use `portess` as a command line utility. You just have to install it globally as `npm install -g portess` and run help command `portess --help` to find the options and usage.
