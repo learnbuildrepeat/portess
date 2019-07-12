@@ -9,7 +9,18 @@ branches:
 install: npm install
 
 notifications:
-  slack: feshinc:jd5vYVkVDQeozpFUc1yBgUpm
+  email: false # default notification method
+  slack: 
+    rooms:
+      - secure: Ed8wVwz8sXPTUUyLMjlyvx/mPoG41BMDjOVUztwfe/KUlSrXOV9yEPoRFUUA0YGZnaPbzZCtNWAOLvoBp4sgEDg/kDaWKZycKGWI1AhV3J7c+xy455Lnq9zLH1EIIDqbEwEE2B2JHTHmXJu3CzyIIPJYLXH2ioy0OHyQ2bBL7YkzKxL1YR+jvkm6YynX+t2zQZxMNAQb2zMRpL4vmy3aBtog7SQISocGRo5eLjLZiFCIJgOINISLL1CO0Eki2+WAyDnrDZGdyUyAbbp5GmgQcxsX6MCKAuNF/50EKgMMLJLYL7V39j5hR+EVyugadVTEhS9ufBq3NYW/y90Tw3yfYR5vGZnr/BJTNE73xN6yQsCUNnuw9OQGmQo+XMZ3zae9hPrSRGrM7UMFZcp2xP60SUXzevdV5Up9LayCzoLHSx9bXps+QVsMwbYCUXrEaBSZd3EP4xzEX4B7E+Pqm8jkFFgunfnkN9mu55s0cMURpNzOLSbiJ/lA/1xM12dZCzZgqbrc1JTp6xhzBwqsqr1c9MYt1Kj0Bf4UjttyTOQNVmSHx18/iZGsL57czEznTSFs9jopgoM+sqZXxWPDs47KiRajrTnQ9NuGKIdW4LAMjTL3btc32LTOegBS3bHHIzTkXbG3KcMcLFrqmtZWcHW9em4HjAcEFBItFlVExY9gbvo=
+    on_success: always # change: send a notification when the build status change
+    on_failure: always # always: always send a notification
+    template:
+      - "Repo: `%{repository_slug}`"
+      - "*%{result}* build (<%{build_url}|#%{build_number}>) in *%{duration}*"
+      - "Commit (<%{compare_url}|%{commit}>) on branch `%{branch}`."
+      - "Message: %{message}"
+      - "by *%{author}*"
 
 jobs:
   include:
@@ -19,11 +30,11 @@ jobs:
   - stage: build
     script: npm run prepare
 
-  - stage: npm release  
-    deploy:
-      provider: npm
-      email: $NPM_EMAIL
-      api_key: $NPM_TOKEN
-      on:
-        tags: true
-        branch: master
+  # - stage: npm release  
+  #   deploy:
+  #     provider: npm
+  #     email: $NPM_EMAIL
+  #     api_key: $NPM_TOKEN
+  #     on:
+  #       tags: true
+  #       branch: master
