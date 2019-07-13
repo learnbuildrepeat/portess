@@ -31,10 +31,10 @@ jobs:
   - stage: test
     script: npm test
     skip_cleanup: true
-  - stage: release  
+  - if: branch = master
+    stage: release  
     deploy:
       provider: script
       skip_cleanup: true
       script:
         - npx semantic-release
-      if: branch = master
