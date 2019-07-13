@@ -2,9 +2,12 @@ language: node_js
 sudo: required
 node_js:
 - stable
+install:
+  npm ci
 cache:
   directories:
-  - node_modules
+  - "$HOME/.npm"
+
 branches:
   only: master
 
@@ -34,8 +37,6 @@ jobs:
     deploy:
       provider: script
       skip_cleanup: true
-      email: $NPM_EMAIL
-      api_key: $NPM_TOKEN
       script:
         - npx semantic-release
       if: branch = master
