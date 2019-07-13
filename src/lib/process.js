@@ -25,7 +25,6 @@ class Process {
 		}
 		return new Promise((resolve,reject) => {
 			process.on('SIGHUP', () => {
-				console.log('Got SIGHUP signal.');
 				return resolve(true);
 			});
 			try {
