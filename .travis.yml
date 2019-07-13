@@ -2,8 +2,9 @@ language: node_js
 sudo: required
 node_js:
 - stable
+
 install:
-  npm ci
+  - npm ci
 cache:
   directories:
   - "$HOME/.npm"
@@ -27,9 +28,6 @@ notifications:
 
 jobs:
   include:
-  - stage: install
-    script: npm install
-    skip_cleanup: true
   - stage: test
     script: npm test
     skip_cleanup: true
