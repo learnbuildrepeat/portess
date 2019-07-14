@@ -1,17 +1,12 @@
-/**
- * isRunning - To Find a pid is active
- * kill - To kill a process by pid
- * by(<type>) - type: name/port
- */
+const commons = require('../utils/commons');
 class Process {
 	/**
-	 * Know if a process is running
-	 * @param pid 
+	 * Know if a process is running 
+	 * @param {number} pid
+	 * @returns {boolean} Represents the state of process 
 	 */
 	static isRunning(pid) {
-		if (!pid) {
-			throw new Error('Provide a pid');
-		}	
+		commons.isValidNumber(pid);
 		try {
 			return process.kill(pid, 0);
 		} catch (error) {
@@ -19,10 +14,13 @@ class Process {
 		}
 	}
 
+	/**
+	 * Kill a process by pid
+	 * @param {number} pid 
+	 * @returns {boolean} Represents the kill operation state 
+	 */
 	static kill(pid) {
-		if (!pid) {
-			throw new Error('Provide a pid');
-		}
+		commons.isValidNumber(pid);
 		return new Promise((resolve,reject) => {
 			process.on('SIGHUP', () => {
 				return resolve(true);
