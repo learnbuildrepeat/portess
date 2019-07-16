@@ -46,10 +46,7 @@
   "files": [
     "dist/**/*"
   ],
-  "dependencies": {
-    "bluebird": "^3.5.5",
-    "debug": "^4.1.1"
-  },
+  "dependencies": {},
   "bin": {
     "portess": "./bin/cli.js"
   },
