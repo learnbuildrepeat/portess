@@ -17,7 +17,8 @@
     "type": "git",
     "url": "https://github.com/valishah/portess.git"
   },
-  "keywords": [],
+  "keywords": ["port", "process", "find port", "find free port", "find available port", "is process running", 
+    "find process by pid", "open", "net", "random", "preferred", "tcp", "kill", "running", "management", "open port", "scan"],
   "author": "",
   "license": "ISC",
   "bugs": {
