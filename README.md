@@ -84,3 +84,5 @@ Commands:
   get|g              Get an available port
   isRunning|r <pid>  Find if a process is active or not
 ```
+&nbsp;
+####[LICENSE](./LICENSE)
