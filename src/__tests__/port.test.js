@@ -20,5 +20,18 @@ describe('Port', () => {
         expect(port).not.toBeFalsy();
         expect(port).toBeGreaterThan(0);
     });
+
+    test('should get random available port if the list is empty', async () => {
+        let port = await Port.get([]);
+        expect(port).not.toBeFalsy();
+        expect(port).toBeGreaterThan(0);
+    });
+
+    test('should get first available port from list of ports', async () => {
+        let port = await Port.get([3000,3002,30010]);
+        expect(port).not.toBeFalsy();
+        expect(port).toBeGreaterThan(0);
+        expect(port).toBe(3000);
+    });
 });
 

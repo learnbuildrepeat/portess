@@ -12,7 +12,7 @@ const create = (port) => {
 
     server.on('error', function (err) {
       if (err.code === 'EADDRINUSE') {
-        console.log('Port %s was in use', port);
+        console.log('Port %s is in use', port);
         return resolve(false);
       }
       return reject(err);
@@ -27,7 +27,7 @@ const create = (port) => {
     server.listen({ port }, function (err) {
       port = server.address().port;
       if (err && err.code === 'EADDRINUSE') {
-        console.log('Port %s was in use', port);
+        console.log('Port %s is in use', port);
         return resolve(false);
       }
       if (err) {
@@ -38,7 +38,7 @@ const create = (port) => {
         if (error){
           return reject(error);
         }
-        console.log('Port %s was free', port);
+        console.log('Port %s is free', port);
       });
     });
   });
