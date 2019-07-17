@@ -29,18 +29,24 @@ portess.port.isOpen(3000)
 ```
 <br/>
 
-`portess.port.get()`
+`portess.port.get(?[ports])`
 
-Get a random open port. Retuns a promise that will be yielded with a port number.
+Get a random open port (or) first available port from the given list. Retuns a promise that will be yielded with a port number.
 
 ```js
 const portess = require('portess');
 
-await portess.port.get(); // Random port number - ex: 44450
+await portess.port.get(); // Returns random port number - ex: 44450
+await portess.port.get([3000, 3010, 4010]);  // Returns first available port from the given list- ex: 3010 (if 3000 is in use)
 
 /***************(or)**************/
 
-portess.port.get()
+portess.port.get() 
+    .then( port => {
+        console.log(`Port %s is open`, port);
+    });
+
+portess.port.get([3000, 3010,4010]) 
     .then( port => {
         console.log(`Port %s is open`, port);
     });
