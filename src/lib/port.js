@@ -15,15 +15,8 @@ class Port {
    * Get a random open port
    * @returns - Available free port number
    */
-  static async get(ports) {
-    if(!ports || ports.length<1)
+  static async get() {
     return await Server.create(0);
-
-    for(let port of ports) {
-      if(await this.isOpen(port))
-      return port;
-    }
-    console.log(`None of the ports in ${ports} are available`);
   }
 }
 
