@@ -1,6 +1,5 @@
 const Server = require('../utils/server');
 const commons = require('../utils/commons');
-
 class Port {
   /**
    * Find if the port is open
