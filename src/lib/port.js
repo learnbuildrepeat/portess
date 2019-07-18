@@ -12,7 +12,8 @@ class Port {
   }
   
   /**
-   * Get a random open port
+   * Get a random open port (or) First available port from list of ports
+   * @param  ports - optional list of ports to check
    * @returns - Available free port number
    */
   static async get(ports) {
