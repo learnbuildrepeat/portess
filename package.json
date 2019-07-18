@@ -1,6 +1,6 @@
 {
   "name": "portess",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,8 +17,25 @@
     "type": "git",
     "url": "https://github.com/valishah/portess.git"
   },
-  "keywords": ["port", "process", "find port", "find free port", "find available port", "is process running", 
-    "find process by pid", "open", "net", "random", "preferred", "tcp", "kill", "running", "management", "open port", "scan"],
+  "keywords": [
+    "port",
+    "process",
+    "find port",
+    "find free port",
+    "find available port",
+    "is process running",
+    "find process by pid",
+    "open",
+    "net",
+    "random",
+    "preferred",
+    "tcp",
+    "kill",
+    "running",
+    "management",
+    "open port",
+    "scan"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
