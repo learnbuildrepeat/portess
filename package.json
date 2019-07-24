@@ -64,7 +64,9 @@
   "files": [
     "dist/**/*"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "debug": "^4.1.1"
+  },
   "bin": {
     "portess": "./bin/cli.js"
   },
