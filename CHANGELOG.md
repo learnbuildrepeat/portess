@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/valishah/portess/compare/v1.1.0...v1.1.1) (2019-07-24)
+
+
+### Bug Fixes
+
+* **debug:** Enabled debugger to avoid unwanted loggers ([3f99f82](https://github.com/valishah/portess/commit/3f99f82))
+
 # [1.1.0](https://github.com/valishah/portess/compare/v1.0.1...v1.1.0) (2019-07-18)
 
 
