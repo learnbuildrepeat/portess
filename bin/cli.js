@@ -39,6 +39,22 @@ commander
     .action(async (pid) => {
         let isKilled = await portess.process.kill(pid);
         console.log('Pid %s is %s', pid, isKilled?'killed':'not available (or) cannot be closed.');
-    });    
+    });
+
+// Monitor ports
+commander
+  .command('monitor <ports...>')
+  .alias('m')
+  .description('Monitor a list of ports and logs to the terminal when port state had changed')
+  .action(function(ports) {
+    var monitor = new portastic.Monitor(ports);
+    monitor.on('open', function(port) {
+      console.log('Port %s is open', port);
+    });
+
+    monitor.on('close', function(port) {
+      console.log('Port %s is closed', port);
+    });
+  });        
 
 commander.parse(process.argv);

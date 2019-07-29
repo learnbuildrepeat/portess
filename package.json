@@ -65,7 +65,9 @@
     "dist/**/*"
   ],
   "dependencies": {
-    "debug": "^4.1.1"
+    "debug": "^4.1.1",
+    "events": "^3.0.0",
+    "util": "^0.12.1"
   },
   "bin": {
     "portess": "./bin/cli.js"

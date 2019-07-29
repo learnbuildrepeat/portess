@@ -1,9 +1,9 @@
-# Portess
+## Portess
+Port and process management
 
 [![Build Status](https://travis-ci.org/learnbuildrepeat/portess.svg?branch=master)](https://travis-ci.org/learnbuildrepeat/portess) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-
-Port and process management. Find open ports, monitor ports, find and manage process states.
+This library helps to find open ports and monitor, find and manage process states.
 
 ### Installation
 `npm install --save portess`
@@ -75,6 +75,30 @@ portess.process.kill(55432); // false : If the process is not found
 ```
 <br/>
 
+`portess.monitor(ports...)`
+
+Monitor is an `EventEmitter` that emits `open` when a monitored port is available and `close` when the port has closed. 
+
+```js
+var portess = require('portess');
+var monitor = new portess.Monitor([8888,9999, 8082]);
+
+monitor.on('open', function(port){
+  console.log('Port %s is open', port);
+});
+
+monitor.on('close', function(port){
+  console.log('Port %s is closed', port);
+});
+
+setTimeout(function(){
+  monitor.stop(); // Stops the monitoring after 5 seconds
+}, 5000);
+```
+<br/>
+
+
+
 ### CLI
 You can use `portess` as a command line utility. You just have to install it globally as `npm install -g portess` and run help command `portess --help` to find the options and usage.
 
@@ -82,13 +106,15 @@ You can use `portess` as a command line utility. You just have to install it glo
 Usage: portess [options] [command]
 
 Options:
-  -V, --version      output the version number
-  -h, --help         output usage information
+  -V, --version         output the version number
+  -h, --help            output usage information
 
 Commands:
-  isOpen|o <port>    Find if a port is open or closed
-  get|g              Get an available port
-  isRunning|r <pid>  Find if a process is active or not
+  isOpen|o <port>       Find if a port is open or closed
+  get|g                 Get an available port
+  isRunning|r <pid>     Find if a process is active or not
+  kill|k <pid>          Kill a process by pid
+  monitor|m <ports...>  Monitor a list of ports and logs to the terminal when port state had changed
 ```
 &nbsp;
 #### [LICENSE](./LICENSE)
