@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/valishah/portess/compare/v1.1.1...v1.2.0) (2019-08-02)
+
+
+### Features
+
+* **monitor pofts:** Included port monitoring ([e88268a](https://github.com/valishah/portess/commit/e88268a))
+
 ## [1.1.1](https://github.com/valishah/portess/compare/v1.1.0...v1.1.1) (2019-07-24)
 
 
